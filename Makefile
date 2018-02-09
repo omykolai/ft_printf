@@ -68,11 +68,11 @@ $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS) && ranlib $(NAME)> $@.log; \
         RESULT=$$?; \
         if [ $$RESULT -ne 0 ]; then \
-            printf "%-20b%-30b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf" "$(ERROR_COLOR)$(ERROR_STRING)$(NO_COLOR)\n"; \
+            printf "%-20b%-40b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf" "$(ERROR_COLOR)$(ERROR_STRING)$(NO_COLOR)\n"; \
         elif [ -s $@.log ]; then \
-            printf "%-20b%-30b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf" "$(WARN_COLOR)$(WARN_STRING)$(NO_COLOR)\n"; \
+            printf "%-20b%-40b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf" "$(WARN_COLOR)$(WARN_STRING)$(NO_COLOR)\n"; \
         else  \
-            printf "%-20b%-30b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n"; \
+            printf "%-20b%-40b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n"; \
         fi; \
         rm -f $@.log; \
         exit $$RESULT
@@ -81,9 +81,9 @@ $(NAME): $(OBJS)
 	@gcc $(FLAGS) $< -o $@> $@.log; \
         RESULT=$$?; \
         if [ $$RESULT -ne 0 ]; then \
-            printf "%-20b%-30b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf: $@" "$(ERROR_COLOR)$(ERROR_STRING)$(NO_COLOR)\n"; \
+            printf "%-20b%-40b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf: $@" "$(ERROR_COLOR)$(ERROR_STRING)$(NO_COLOR)\n"; \
         elif [ -s $@.log ]; then \
-            printf "%-20b%-30b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf: $@" "$(WARN_COLOR)$(WARN_STRING)$(NO_COLOR)\n"; \
+            printf "%-20b%-40b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf: $@" "$(WARN_COLOR)$(WARN_STRING)$(NO_COLOR)\n"; \
         fi; \
         rm -f $@.log; \
         exit $$RESULT
