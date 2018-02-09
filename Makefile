@@ -1,4 +1,5 @@
 NAME=libftprintf.a
+LIBFTDIR=libft/
 FLAGS= -Wall -Wextra -Werror -c
 SRCS=src/ft_printf.c\
 	 src/ft_dprintf.c\
@@ -26,23 +27,23 @@ SRCS=src/ft_printf.c\
 	 src/buff_management/buff_funcs.c\
 	 src/buff_management/flush.c\
 	 src/buff_management/unistr_funcs.c\
-	 src/libft/ft_atoi.c\
-	 src/libft/ft_isdigit.c\
-	 src/libft/ft_itoa_base.c\
-	 src/libft/ft_itoamax.c\
-	 src/libft/ft_memset.c\
-	 src/libft/ft_bzero.c\
-	 src/libft/ft_putstr.c\
-	 src/libft/ft_strcmp.c\
-	 src/libft/ft_strncmp.c\
-	 src/libft/ft_strequ.c\
-	 src/libft/ft_strnequ.c\
-	 src/libft/ft_tolower.c\
-	 src/libft/ft_strlen.c\
-	 src/libft/ft_memalloc.c\
-	 src/libft/ft_strnew.c\
-	 src/libft/ft_wstrlen.c\
-	 src/libft/ft_wstrnew.c
+	 $(LIBFTDIR)ft_atoi.c\
+	 $(LIBFTDIR)ft_isdigit.c\
+	 $(LIBFTDIR)ft_itoa_base.c\
+	 $(LIBFTDIR)ft_itoamax.c\
+	 $(LIBFTDIR)ft_memset.c\
+	 $(LIBFTDIR)ft_bzero.c\
+	 $(LIBFTDIR)ft_putstr.c\
+	 $(LIBFTDIR)ft_strcmp.c\
+	 $(LIBFTDIR)ft_strncmp.c\
+	 $(LIBFTDIR)ft_strequ.c\
+	 $(LIBFTDIR)ft_strnequ.c\
+	 $(LIBFTDIR)ft_tolower.c\
+	 $(LIBFTDIR)ft_strlen.c\
+	 $(LIBFTDIR)ft_memalloc.c\
+	 $(LIBFTDIR)ft_strnew.c\
+	 $(LIBFTDIR)ft_wstrlen.c\
+	 $(LIBFTDIR)ft_wstrnew.c
 OBJS=$(SRCS:%.c=%.o)
 
 .PHONY: all clean fclean re

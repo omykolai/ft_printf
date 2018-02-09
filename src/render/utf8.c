@@ -6,12 +6,12 @@
 /*   By: omykolai <omykolai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:09:11 by omykolai          #+#    #+#             */
-/*   Updated: 2018/02/04 18:56:47 by omykolai         ###   ########.fr       */
+/*   Updated: 2018/02/09 16:22:53 by omykolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <wchar.h>
-#include "../libft/libft.h"
+#include "../../includes/libft_include.h"
 
 static int	utf8_else(wchar_t c, char *wc)
 {

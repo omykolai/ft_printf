@@ -6,7 +6,7 @@
 /*   By: omykolai <omykolai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 14:19:06 by omykolai          #+#    #+#             */
-/*   Updated: 2018/02/05 15:08:50 by omykolai         ###   ########.fr       */
+/*   Updated: 2018/02/09 16:23:01 by omykolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 # include <wchar.h>
-# include "../src/libft/libft.h"
+# include "../includes/libft_include.h"
 # include "ft_colors.h"
 # define BUFF_SIZE 4096
 
