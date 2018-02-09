@@ -1,3 +1,17 @@
+COM_COLOR   = \033[1;34m
+CLEAN_COLOR	= \033[1;31m
+OBJ_COLOR   = \033[0;36m
+OK_COLOR    = \033[0;32m
+ERROR_COLOR = \033[0;31m
+WARN_COLOR  = \033[0;33m
+NO_COLOR    = \033[m
+
+OK_STRING    = "[OK]"
+ERROR_STRING = "[ERROR]"
+WARN_STRING  = "[WARNING]"
+COM_STRING   = "Compiling"
+CLEAN_STRING	 = "Cleaning"
+
 NAME=libftprintf.a
 LIBFTDIR=libft/
 FLAGS= -Wall -Wextra -Werror -c
@@ -51,16 +65,35 @@ OBJS=$(SRCS:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJS) && ranlib $(NAME)> $@.log; \
+        RESULT=$$?; \
+        if [ $$RESULT -ne 0 ]; then \
+            printf "%-20b%-30b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf" "$(ERROR_COLOR)$(ERROR_STRING)$(NO_COLOR)\n"; \
+        elif [ -s $@.log ]; then \
+            printf "%-20b%-30b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf" "$(WARN_COLOR)$(WARN_STRING)$(NO_COLOR)\n"; \
+        else  \
+            printf "%-20b%-30b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n"; \
+        fi; \
+        rm -f $@.log; \
+        exit $$RESULT
 
 %.o: %.c
-	gcc $(FLAGS) $< -o $@
+	@gcc $(FLAGS) $< -o $@> $@.log; \
+        RESULT=$$?; \
+        if [ $$RESULT -ne 0 ]; then \
+            printf "%-20b%-30b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf: $@" "$(ERROR_COLOR)$(ERROR_STRING)$(NO_COLOR)\n"; \
+        elif [ -s $@.log ]; then \
+            printf "%-20b%-30b%b" "$(COM_COLOR)$(COM_STRING)" "$(OBJ_COLOR)ft_printf: $@" "$(WARN_COLOR)$(WARN_STRING)$(NO_COLOR)\n"; \
+        fi; \
+        rm -f $@.log; \
+        exit $$RESULT
 
 clean:
-	-rm -f $(OBJS)
+	@-rm -f $(OBJS)
+	@printf "%-20b%b" "$(CLEAN_COLOR)$(CLEAN_STRING)" "$(OBJ_COLOR)ft_printf\n"
 
 fclean: clean
-	-rm -f $(NAME)
+	@-rm -f $(NAME)
+	@printf "%-20b%b" "$(CLEAN_COLOR)Removing" "$(OBJ_COLOR)libftprintf.a\n"
 
 re: fclean all
