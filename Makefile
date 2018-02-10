@@ -90,10 +90,10 @@ $(NAME): $(OBJS)
 
 clean:
 	@-rm -f $(OBJS)
-	@printf "%-20b%b" "$(CLEAN_COLOR)$(CLEAN_STRING)" "$(OBJ_COLOR)ft_printf\n"
+	@printf "%-20b%b" "$(CLEAN_COLOR)$(CLEAN_STRING)" "$(OBJ_COLOR)ft_printf$(NO_COLOR)\n"
 
 fclean: clean
 	@-rm -f $(NAME)
-	@printf "%-20b%b" "$(CLEAN_COLOR)Removing" "$(OBJ_COLOR)libftprintf.a\n"
+	@printf "%-20b%b" "$(CLEAN_COLOR)Removing" "$(OBJ_COLOR)libftprintf.a$(NO_COLOR)\n"
 
 re: fclean all
