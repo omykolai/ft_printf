@@ -6,7 +6,7 @@
 /*   By: omykolai <omykolai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 21:52:03 by omykolai          #+#    #+#             */
-/*   Updated: 2018/02/04 17:46:59 by omykolai         ###   ########.fr       */
+/*   Updated: 2018/02/17 14:22:32 by omykolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static intmax_t		get_int(va_list ap, t_flags *flags)
 	if (flags->other & F_J)
 		res = (intmax_t)va_arg(ap, intmax_t);
 	else if (flags->other & F_Z)
-		res = (intmax_t)va_arg(ap, intmax_t);
+		res = (intmax_t)va_arg(ap, ssize_t);
 	else if (flags->other & F_LL)
 		res = (intmax_t)va_arg(ap, long long);
 	else if (flags->other & F_L)
@@ -81,7 +81,7 @@ static uintmax_t	get_uint(va_list ap, t_flags *flags)
 	if (flags->other & F_J)
 		res = (uintmax_t)va_arg(ap, uintmax_t);
 	else if (flags->other & F_Z)
-		res = (uintmax_t)va_arg(ap, uintmax_t);
+		res = (uintmax_t)va_arg(ap, size_t);
 	else if (flags->other & F_LL)
 		res = (uintmax_t)va_arg(ap, unsigned long long) & ULLONG_MAX;
 	else if (flags->other & F_L)
