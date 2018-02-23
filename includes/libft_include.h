@@ -6,13 +6,13 @@
 /*   By: omykolai <omykolai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 14:45:22 by omykolai          #+#    #+#             */
-/*   Updated: 2018/02/09 16:21:33 by omykolai         ###   ########.fr       */
+/*   Updated: 2018/02/23 16:32:05 by omykolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_INCLUDE_H
 # define LIBFT_INCLUDE_H
 
-# include "../libft/libft.h"
+# include "../../libft/libft.h"
 
 #endif
