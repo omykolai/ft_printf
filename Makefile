@@ -13,7 +13,7 @@ COM_STRING   = "Compiling"
 CLEAN_STRING	 = "Cleaning"
 
 NAME=libftprintf.a
-LIBFTDIR=libft/
+LIBFTDIR=../libft/
 FLAGS= -Wall -Wextra -Werror -c
 SRCS=src/ft_printf.c\
 	 src/ft_dprintf.c\
